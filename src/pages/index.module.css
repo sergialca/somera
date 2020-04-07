@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+
+.portada {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.imgPortada {
+    margin-top: 50px;
+    margin-bottom: 100px;
+    width: 400px;
+}
+
+.text {
+    width: 100%;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    text-align: center;
+    font-size: 2rem;
+    letter-spacing: 0.9px;
+    font-weight: 300;
+}
+
+.btnWrapper {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.linkPortada {
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    min-width: 8rem;
+    background-color: #f8bc23;
+    padding: 0.65rem 2rem;
+    text-align: center;
+    border-width: 0px;
+    line-height: 1.6rem;
+    border-radius: 200px;
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.linkPortada:hover {
+    background-color: #f8bc2394;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.btnSecond {
+    margin-left: 10px;
+}
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+}
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+    .imgPortada {
+        margin-top: 100px;
+        margin-bottom: 60px;
+        width: 450px;
+    }
+    .text {
+        font-size: 3rem;
+    }
+}
+
+/*Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+}
