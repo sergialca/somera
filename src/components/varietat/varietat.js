@@ -10,6 +10,7 @@ const Varietat = props => {
             <div className={style.wrapperText}>
                 <div className={style.subTitle}>{props.subTitle}</div>
                 {props.text}
+                <div className={style.info}>{props.info}</div>
             </div>
         </div>
     );
