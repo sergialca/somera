@@ -5,5 +5,6 @@
  */
 
 module.exports = {
-  /* Your site config here */
-}
+    pathPrefix: "/somera",
+    /* Your site config here */
+};

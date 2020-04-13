@@ -1,0 +1,26 @@
+.navBar {
+    position: fixed;
+    width: 100%;
+    background-color: #f2f3f3;
+}
+.logo {
+    width: 60px;
+    margin-right: 40px;
+}
+
+.space {
+    margin-right: 20px;
+}
+
+.navLink {
+    color: #000000;
+    line-height: 3;
+}
+
+.navLink:hover {
+    color: #000000;
+}
+
+.instaLogo {
+    width: 26px;
+}

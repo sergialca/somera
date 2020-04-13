@@ -2,7 +2,9 @@ import React, { Fragment } from "react";
 import Nav from "../components/nav/nav";
 import Varietat from "../components/varietat/varietat";
 import InstaRow from "../components/instaRow/instaRow";
+//import InstagramEmbed from "react-instagram-embed";
 import Form from "../components/form/form";
+import Footer from "../components/footer/footer";
 import logoIntro from "../../static/somera_intro.png";
 import blonde from "../../static/blonde.jpg";
 import ipa from "../../static/ipa.jpg";
@@ -15,14 +17,14 @@ const Main = () => {
     return (
         <Fragment>
             <Nav />
-            <div className={style.intro}>
+            <div id="intro" className={style.intro}>
                 <img
                     className={style.imgIntro}
                     src={logoIntro}
                     alt="Somera cervesa artesana intro"
                 />
                 <div className={style.textIntro}>
-                    <span className={style.title}>La nostra cervesa</span>
+                    <span className={`${style.title} ${style.second}`}>La nostra cervesa</span>
                     <p className={`${style.justify} ${style.font}`}>
                         La nostra visió consisteix en oferir cervesa d’alta qualitat respectant els
                         processos d’elaboració tradicionals.
@@ -35,7 +37,9 @@ const Main = () => {
                     </p>
                 </div>
             </div>
-            <div className={`${style.title} ${style.center}`}>Varietats de cerveses</div>
+            <div id="varietats" className={`${style.title} ${style.center}`}>
+                Varietats de cerveses
+            </div>
             <div className={style.varietats}>
                 <Varietat
                     imgSrc={ipa}
@@ -62,9 +66,9 @@ De textura cremosa i amb gust lleuger a llúpols i aroma afruitada. Conté notes
             <div>
                 <InstaRow />
             </div>
-            <div className={style.pack}>
+            <div id="packs" className={style.pack}>
                 <div className={style.textPack}>
-                    <span className={style.title}>Demana el teu pack</span>
+                    <span className={`${style.title} ${style.second}`}>Demana el teu pack</span>
                     <p className={`${style.justify} ${style.font}`}>
                         Tant si ets d’un únic estil o de tots, tenim el pack ideal! Per compartir,
                         per regalar o per gaudir-los sol.{" "}
@@ -81,6 +85,9 @@ De textura cremosa i amb gust lleuger a llúpols i aroma afruitada. Conté notes
             </div>
             <div id="form">
                 <Form />
+            </div>
+            <div id="footer">
+                <Footer />
             </div>
         </Fragment>
     );

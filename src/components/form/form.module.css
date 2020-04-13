@@ -21,17 +21,62 @@
     text-align: center;
 }
 
-input {
+.form input,
+.form .textArea {
     padding: 5px;
-    margin-bottom: 20px;
+    outline: none;
+    border-width: 0.5px;
+    box-shadow: none;
+    border-style: solid;
+    border-color: #ccc;
+    width: 100%;
 }
 
+.form input:focus,
+.form .textArea:focus {
+    outline: none;
+    border-color: #0080ff;
+    border-width: 0.5px;
+    padding: 5px;
+}
 .required {
-    color: red;
+    color: #ff0000;
 }
 .textArea {
     padding: 5px;
+}
+
+.noValid {
+    color: #ff0000;
+    height: 4px;
     margin-bottom: 20px;
+}
+.errorClass {
+    border-color: #ff0000 !important;
+    border-style: solid;
+    border-width: 0.5px;
+    outline: none;
+    padding: 5px;
+}
+
+.btnEnviar {
+    width: 140px;
+    background-image: none;
+    background-color: #fff;
+    border-style: solid;
+    border-color: #ccc;
+    border-width: 0.5px;
+    padding: 5px 0;
+}
+.btnEnviar:hover {
+    border-color: #0080ff;
+}
+.btnEnviarWrapper {
+    text-align: center;
+}
+
+.hidden {
+    display: none;
 }
 /*Small devices (landscape phones, 576px and up)*/
 @media (min-width: 576px) {

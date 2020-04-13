@@ -13,6 +13,10 @@
     text-align: center;
 }
 
+.second {
+    text-align: center;
+}
+
 .font {
     font-family: "Open Sans", Helvetica, Arial, sans-serif;
     color: #6b7c93;
@@ -34,6 +38,7 @@
 }
 .imgIntro {
     width: 300px;
+    margin-top: 30px;
 }
 .textIntro {
     display: flex;
@@ -50,7 +55,9 @@
 }
 
 /*Insta*/
-
+.embed {
+    max-height: 420px;
+}
 /*pack*/
 .pack {
     padding: 20px;
@@ -77,12 +84,21 @@
     box-shadow: 0px 0px 10px 2px rgba(255, 152, 0, 1);
 }
 
+/*form
+.form {
+    display: flex;
+    flex-wrap: wrap;
+}*/
+
 /*Small devices (landscape phones, 576px and up)*/
 @media (min-width: 576px) {
 }
 
 /*Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) {
+    .second {
+        text-align: left;
+    }
     /*Varietats*/
     .varietats {
         padding: 10px 50px 50px 50px;
@@ -95,9 +111,11 @@
     }
     .imgIntro {
         width: 350px;
+        margin-top: 0px;
     }
     .imgPack {
         width: 550px;
+        max-height: 400px;
     }
     .pack {
         padding: 50px;
