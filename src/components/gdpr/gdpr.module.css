@@ -1,0 +1,35 @@
+.hide {
+    display: none;
+}
+
+.show {
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 5px 20px;
+}
+
+.show span {
+    margin-right: 10px;
+}
+
+.show button {
+    background-image: none;
+    border: 0px solid;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #ff9800;
+    padding: 5px;
+}
+
+.show button:hover {
+    background-color: #fac068;
+}
+
+@media (min-width: 768px) {
+    .show {
+        padding: 5px 50px;
+    }
+}

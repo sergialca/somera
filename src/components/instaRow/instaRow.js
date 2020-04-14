@@ -5,7 +5,7 @@ const InstaRow = () => {
     return (
         <div className={style.wrapper}>
             <span className={style.text}>
-                No et perdis cap novetat! Totes les notícies i events a Instagram
+                No et perdis cap novetat! Totes les notícies i esdeveniments a Instagram
             </span>
             <div className={style.contLink}>
                 <a
