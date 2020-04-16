@@ -1,6 +1,10 @@
+.hide {
+    display: none;
+}
 .navBar {
     width: 100%;
     background-color: #f2f3f3;
+    z-index: 1;
 }
 .logo {
     width: 60px;
@@ -22,4 +26,7 @@
 
 .instaLogo {
     width: 26px;
+}
+.instaLogo:hover {
+    width: 22px;
 }

@@ -72,7 +72,7 @@ const Form = () => {
                     className={errorComment ? style.errorClass : style.textArea}
                     onChange={commentChange}
                     name="comment"
-                    rows="4"
+                    rows="8"
                     cols="50"
                     required
                 />

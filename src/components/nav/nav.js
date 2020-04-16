@@ -19,20 +19,16 @@ const Nav = () => {
 
     return (
         <Navbar className={style.navBar} expanded={show} fixed="top" expand="lg">
-            <GLink to="/main#intro">
+            <GLink onClick={sel} to="/#cervesa">
                 <img className={style.logo} src={lletra} alt="logo" />
             </GLink>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" onClick={btnClick} />
             <Navbar.Collapse id="responsive-navbar-nav">
-                <GLink
-                    onClick={sel}
-                    className={`${style.space} ${style.navLink}`}
-                    to="/main#varietats"
-                >
+                <GLink onClick={sel} className={`${style.space} ${style.navLink}`} to="/#varietats">
                     Varietats
                 </GLink>
                 <br />
-                <GLink onClick={sel} className={`${style.space} ${style.navLink}`} to="/main#packs">
+                <GLink onClick={sel} className={`${style.space} ${style.navLink}`} to="/#packs">
                     Packs
                 </GLink>
                 <br />

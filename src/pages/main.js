@@ -3,6 +3,7 @@ import Nav from "../components/nav/nav";
 import Varietat from "../components/varietat/varietat";
 import InstaRow from "../components/instaRow/instaRow";
 //import InstagramEmbed from "react-instagram-embed";
+import Modal from "../components/modal/modal";
 import Form from "../components/form/form";
 import Footer from "../components/footer/footer";
 import logoIntro from "../../static/somera_intro.png";
@@ -16,6 +17,7 @@ import style from "./main.module.css";
 const Main = () => {
     return (
         <Fragment>
+            <Modal />
             <Nav />
             <div id="intro" className={style.intro}>
                 <img
