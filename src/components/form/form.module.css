@@ -10,7 +10,7 @@
     flex-wrap: wrap;
     flex-direction: column;
     background-color: #fff;
-    padding: 20px;
+    padding: 20px 20px 40px 20px;
     box-shadow: 0px 0px 50px -14px rgba(0, 0, 0, 0.75);
 }
 .subTitle {
