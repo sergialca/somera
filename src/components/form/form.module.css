@@ -13,10 +13,10 @@
     padding: 20px;
     box-shadow: 0px 0px 50px -14px rgba(0, 0, 0, 0.75);
 }
-.title {
-    font-family: "Playfair Display";
-    font-weight: 700;
-    font-size: 2.5em;
+.subTitle {
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    font-weight: 100;
+    font-size: 1.5em;
     color: #3c424f;
     text-align: center;
 }
@@ -68,11 +68,28 @@
     border-width: 0.5px;
     padding: 5px 0;
 }
+
 .btnEnviar:hover {
     border-color: #0080ff;
 }
+
+.btnEnviar:focus {
+    outline: none;
+    border-width: 0.5;
+}
+
+.btnEnviar:active {
+    background-color: #0080ff;
+}
+
 .btnEnviarWrapper {
     text-align: center;
+}
+
+.spinnerWrapper {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
 }
 
 .hidden {

@@ -32,6 +32,10 @@ const Nav = () => {
                     Packs
                 </GLink>
                 <br />
+                <GLink onClick={sel} className={`${style.space} ${style.navLink}`} to="/#form">
+                    Contacta
+                </GLink>
+                <br />
                 <a
                     onClick={sel}
                     className={style.navLink}

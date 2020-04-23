@@ -1,0 +1,11 @@
+.ok {
+    margin-top: 10px;
+    background-color: #a7fb94;
+    padding: 5px;
+}
+
+.bad {
+    margin-top: 10px;
+    background-color: #fb9794;
+    padding: 5px;
+}

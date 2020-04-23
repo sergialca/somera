@@ -2,9 +2,9 @@ import React, { Fragment } from "react";
 import Nav from "../components/nav/nav";
 import Varietat from "../components/varietat/varietat";
 import InstaRow from "../components/instaRow/instaRow";
-//import InstagramEmbed from "react-instagram-embed";
 import Modal from "../components/modal/modal";
 import Form from "../components/form/form";
+import Contest from "../components/contest/contest";
 import Footer from "../components/footer/footer";
 import logoIntro from "../../static/somera_intro.png";
 import blonde from "../../static/blonde.jpg";
@@ -12,7 +12,7 @@ import ipa from "../../static/ipa.jpg";
 import weisse from "../../static/weiss.jpg";
 import pack from "../../static/pack.jpg";
 import "bootstrap/dist/css/bootstrap.min.css";
-import style from "./main.module.css";
+import style from "./index.module.css";
 
 const Main = () => {
     return (
@@ -87,6 +87,9 @@ De textura cremosa i amb gust lleuger a llúpols i aroma afruitada. Conté notes
             </div>
             <div id="form">
                 <Form />
+            </div>
+            <div id="concurs">
+                <Contest />
             </div>
             <div id="footer">
                 <Footer />
