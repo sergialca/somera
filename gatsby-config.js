@@ -6,5 +6,13 @@
 
 module.exports = {
     pathPrefix: "/somera",
+    plugins: [
+        {
+            resolve: "gatsby-plugin-anchor-links",
+            options: {
+                offset: -50,
+            },
+        },
+    ],
     /* Your site config here */
 };
