@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Navbar from "react-bootstrap/Navbar";
-import { AnchorLink } from "gatsby-plugin-anchor-links";
+import { Link } from "gatsby";
 import lletra from "../../../static/lletra.png";
 import instaLogo from "../../../static/instagram.png";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -19,30 +19,22 @@ const Nav = () => {
 
     return (
         <Navbar className={style.navBar} expanded={show} fixed="top" expand="lg">
-            <AnchorLink onClick={sel} to="/#cervesa">
+            <Link onClick={sel} to="/#cervesa">
                 <img className={style.logo} src={lletra} alt="logo" />
-            </AnchorLink>
+            </Link>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" onClick={btnClick} />
             <Navbar.Collapse id="responsive-navbar-nav">
-                <AnchorLink
-                    onClick={sel}
-                    className={`${style.space} ${style.navLink}`}
-                    to="/#varietats"
-                >
+                <Link onClick={sel} className={`${style.space} ${style.navLink}`} to="/#varietats">
                     Varietats
-                </AnchorLink>
+                </Link>
                 <br />
-                <AnchorLink
-                    onClick={sel}
-                    className={`${style.space} ${style.navLink}`}
-                    to="/#packs"
-                >
+                <Link onClick={sel} className={`${style.space} ${style.navLink}`} to="/#packs">
                     Packs
-                </AnchorLink>
+                </Link>
                 <br />
-                <AnchorLink onClick={sel} className={`${style.space} ${style.navLink}`} to="/#form">
+                <Link onClick={sel} className={`${style.space} ${style.navLink}`} to="/#form">
                     Contacta
-                </AnchorLink>
+                </Link>
                 <br />
                 <a
                     onClick={sel}
