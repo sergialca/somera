@@ -22,11 +22,14 @@ import style from "./index.module.css";
 
 const Index = () => {
     const [lang, setLang] = useContext(LangContext);
+    console.log("Index -> useContext(LangContext)", useContext(LangContext));
+    console.log("Index -> setLang", setLang);
+    console.log("Index -> lang", lang);
     const [content, setContent] = useState("hello");
 
     useEffect(() => {
-        if (lang.site === "cat") catContent();
-        else if (lang.site === "esp") espContent();
+        if (lang[0].site === "cat") catContent();
+        else if (lang[0].site === "esp") espContent();
     }, [lang]);
 
     const catContent = async () => {
