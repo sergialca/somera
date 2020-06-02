@@ -8,9 +8,9 @@ const Flag = () => {
     const select = async event => {
         let val = event.target.value;
         if (val === "cat") {
-            setLang("cat");
+            setLang({ site: "cat" });
         } else if (val === "esp") {
-            setLang("esp");
+            setLang({ site: "esp" });
         }
     };
 

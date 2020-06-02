@@ -17,8 +17,8 @@ const Gdpr = ({ children }) => {
     }, []);
 
     useEffect(() => {
-        if (lang === "cat") catContent();
-        else if (lang === "esp") espContent();
+        if (lang.site === "cat") catContent();
+        else if (lang.site === "esp") espContent();
     }, [lang]);
 
     const catContent = async () => {
