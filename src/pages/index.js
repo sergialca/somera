@@ -28,8 +28,8 @@ const Index = () => {
     const [content, setContent] = useState("hello");
 
     useEffect(() => {
-        if (lang[0][0].site === "cat") catContent();
-        else if (lang[0][0].site === "esp") espContent();
+        if (lang[0] === "cat") catContent();
+        else if (lang[0] === "esp") espContent();
     }, [lang]);
 
     const catContent = async () => {

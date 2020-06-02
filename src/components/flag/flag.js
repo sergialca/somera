@@ -1,16 +1,16 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { LangContext } from "../../context/lang";
 import style from "./flag.module.css";
 
 const Flag = () => {
-    const [lang, setLang] = useContext(LangContext);
+    const [lang, setLang] = [useContext(LangContext), useContext(LangContext)];
 
     const select = async event => {
         let val = event.target.value;
         if (val === "cat") {
-            setLang([{ site: "cat" }]);
+            setLang[1]("cat");
         } else if (val === "esp") {
-            setLang([{ site: "esp" }]);
+            setLang[1]("esp");
         }
     };
 

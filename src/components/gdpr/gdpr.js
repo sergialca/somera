@@ -6,7 +6,7 @@ import style from "./gdpr.module.css";
 
 const Gdpr = ({ children }) => {
     const [someraCookies, setSomeraCookies] = useState({ gdpr: false });
-    const [lang, setLang] = useContext(LangContext);
+    const [lang, setLang] = [useContext(LangContext), useContext(LangContext)];
     const [content, setContent] = useState("hello");
 
     useEffect(() => {
@@ -17,8 +17,8 @@ const Gdpr = ({ children }) => {
     }, []);
 
     useEffect(() => {
-        if (lang[0].site === "cat") catContent();
-        else if (lang[0].site === "esp") espContent();
+        if (lang[0] === "cat") catContent();
+        else if (lang[0] === "esp") espContent();
     }, [lang]);
 
     const catContent = async () => {
