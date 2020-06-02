@@ -1,5 +1,6 @@
 .wrapper {
     padding: 20px;
+    background-image: linear-gradient(45deg, #fff400 0, #ffab25 100%);
 }
 .title {
     font-family: "Playfair Display";
@@ -9,10 +10,8 @@
     text-align: center;
 }
 
-.content {
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+.text {
+    font-size: 1.5rem;
 }
 
 /*Small devices (landscape phones, 576px and up)*/

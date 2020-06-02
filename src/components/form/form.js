@@ -5,7 +5,7 @@ import PacmanLoader from "react-spinners/PacmanLoader";
 import style from "./form.module.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const Form = () => {
+const Form = props => {
     const [vals, setVals] = useState(true);
     const [errorName, setErrorName] = useState();
     const [errorMail, setErrorMail] = useState();
@@ -84,9 +84,9 @@ const Form = () => {
     return (
         <div className={style.formWrapper}>
             <form id="contact" className={style.form} onSubmit={handleSubmit}>
-                <div className={style.subTitle}>Contacta</div>
+                <div className={style.subTitle}>{props.title}</div>
                 <label htmlFor="name">
-                    Nom <span className={style.required}>*</span>
+                    {props.nom} <span className={style.required}>*</span>
                 </label>
                 <input
                     className={errorName ? style.errorClass : ""}
@@ -97,7 +97,7 @@ const Form = () => {
                 />
                 <div className={style.noValid}>{errorName}</div>
                 <label htmlFor="email">
-                    Mail <span className={style.required}>*</span>
+                    {props.mail} <span className={style.required}>*</span>
                 </label>
                 <input
                     className={errorMail ? style.errorClass : ""}
@@ -108,7 +108,7 @@ const Form = () => {
                 />
                 <div className={style.noValid}>{errorMail}</div>
                 <label htmlFor="comment">
-                    Comentari <span className={style.required}>*</span>
+                    {props.comment} <span className={style.required}>*</span>
                 </label>
                 <textarea
                     className={errorComment ? style.errorClass : style.textArea}

@@ -1,24 +1,51 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useContext, useState, useEffect } from "react";
 import Nav from "../components/nav/nav";
 import Varietat from "../components/varietat/varietat";
+import Lab from "../components/lab/lab";
 import InstaRow from "../components/instaRow/instaRow";
 import Modal from "../components/modal/modal";
 import Form from "../components/form/form";
 import Contest from "../components/contest/contest";
+import Right from "../components/right/right";
+import Left from "../components/left/left";
 import Footer from "../components/footer/footer";
 import logoIntro from "../../static/somera_intro.png";
-import blonde from "../../static/blonde.jpg";
-import ipa from "../../static/ipa.jpg";
-import weisse from "../../static/weiss.jpg";
+import blonde from "../../static/blonde_etiquet.png";
+import ipa from "../../static/ipa_etiquet.png";
+import weisse from "../../static/weisse_etiquet.png";
+import lab from "../../static/lab_etiquet.png";
 import pack from "../../static/pack.jpg";
+import { LangContext } from "../context/lang";
+import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import style from "./index.module.css";
 
 const Main = () => {
+    const [lang, setLang] = useContext(LangContext);
+    const [content, setContent] = useState("hello");
+
+    useEffect(() => {
+        if (lang === "cat") catContent();
+        else if (lang === "esp") espContent();
+    }, [lang]);
+
+    const catContent = async () => {
+        const res = await axios({
+            url: "https://someraserver.herokuapp.com/api/cat",
+        });
+        setContent(res.data[0]);
+    };
+
+    const espContent = async () => {
+        const res = await axios({
+            url: "https://someraserver.herokuapp.com/api/esp",
+        });
+        setContent(res.data[0]);
+    };
     return (
         <Fragment>
             <Modal />
-            <Nav />
+            <Nav navVarietats={content.navVarietats} navUs={content.navUs} />
             <div id="cervesa" className={style.intro}>
                 <img
                     className={style.imgIntro}
@@ -26,73 +53,85 @@ const Main = () => {
                     alt="Somera cervesa artesana intro"
                 />
                 <div className={style.textIntro}>
-                    <span className={`${style.title} ${style.second}`}>La nostra cervesa</span>
-                    <p className={`${style.justify} ${style.font}`}>
-                        La nostra visió consisteix en oferir cervesa d’alta qualitat respectant els
-                        processos d’elaboració tradicionals.
-                    </p>
-                    <p className={`${style.justify} ${style.font}`}>
-                        Treballem amb entusiasme i de manera artesana, sense pressa. Escollim
-                        ingredients de proximitat, aportem a les nostres receptes la paciència que
-                        es mereixen, respectant els temps de maduració i aconseguint un resultats de
-                        qualitat.
-                    </p>
+                    <span className={`${style.title} ${style.second}`}>{content.beerTitle}</span>
+                    <p className={`${style.justify} ${style.font}`}>{content.beerText}</p>
                 </div>
             </div>
-            <div id="varietats" className={`${style.title} ${style.center}`}>
-                Varietats de cerveses
-            </div>
+            <div id="varietats" className={`${style.title} ${style.center}`}></div>
             <div className={style.varietats}>
                 <Varietat
                     imgSrc={ipa}
                     subTitle="IPA"
-                    info="Alc: 6,2%, IBU: 50, EBC: 10,4"
-                    text="Cervesa rossa d’alta fermentació i sense filtrar. De gust intens, aromàtic i refrescant. Elaborada amb dues varietats de malta i sis llúpols d’òrigen americà.
-Somera IPA està pensada per a tots aquells que gaudeixin d’una cervesa llupolada però sense ser excessivament amarga. S’aprecien notes cítriques i florals, ideals per treu-re la sed."
+                    info="Alc: 6,2%, IBU: 50"
+                    text={content.ipaText}
                 />
                 <Varietat
                     imgSrc={blonde}
                     subTitle="Blonde"
-                    text="Cervesa rossa d’alta fermentació i sense filtrar. De gust lleuger i fresc, molt fàcil de prendre. Elaborada amb tres varietats de malta i tres llúpols d’origen europeu.
-Somera Blonde está pensada per a tots aquells que els busquin gaudir d’una cervesa lleugera. Ideal per pendre-la durant el vermut."
-                    info="Alc: 5,6% IBU: 15 EBC: 8,5"
+                    text={content.blondeText}
+                    info="Alc: 5,6% IBU: 15"
                 />
                 <Varietat
                     imgSrc={weisse}
-                    subTitle="Weisse"
-                    text="Cervesa de blat d’alta fermentació i sense filtrar.
-De textura cremosa i amb gust lleuger a llúpols i aroma afruitada. Conté notes de plàtan i clau. Somera Weisse està elaborada segons la tradició bavaresa i recomanem prende-la de la mateixa manera: ebocant tot el seu contingut en un got alt i deixant pas als sediments naturals."
-                    info="Alc: 5,5% IBU: 22 EBC: 9,7"
+                    subTitle="Weissebier"
+                    text={content.weissebierText}
+                    info="Alc: 5,5% IBU: 22"
+                />
+                <Lab
+                    imgSrc={lab}
+                    subTitle="Somera Lab"
+                    text={content.labText}
+                    lab1={content.lab1}
+                    lab1Text={content.lab1Text}
+                    lab2={content.lab2}
+                    lab2Text={content.lab2Text}
+                    lab3={content.lab3}
+                    lab3Text={content.lab3Text}
+                    lab4={content.lab4}
+                    lab4Text={content.lab4Text}
+                    info={content.labConsulta}
                 />
             </div>
             <div>
-                <InstaRow />
+                <InstaRow text={content.instaText} btn={content.instaBtn} />
             </div>
             <div id="packs" className={style.pack}>
                 <div className={style.textPack}>
-                    <span className={`${style.title} ${style.second}`}>Demana el teu pack</span>
+                    <span className={`${style.title} ${style.second}`}>{content.packTitle}</span>
                     <p className={`${style.justify} ${style.font}`}>
-                        Tant si ets d’un únic estil o de tots, tenim el pack ideal! Per compartir,
-                        per regalar o per gaudir-los sol.{" "}
-                        <span className={style.bold}>
-                            Contacta amb nosaltres a través del nostre formulari
-                        </span>{" "}
-                        i indica’ns la teva preferència.
+                        {content.packText} <span className={style.bold}>{content.packContact}</span>{" "}
+                        {content.packTexto}
                     </p>
                     <p className={`${style.imp} ${style.font}`}>
-                        <span>Novetat!!</span> També tenim pack per als col·leccionistes
+                        <span>{content.packNew}</span> {content.packNewText}
                     </p>
                 </div>
                 <img className={style.imgPack} src={pack} alt="pack degustacio" />
             </div>
             <div id="form">
-                <Form />
+                <Form
+                    title={content.formTitle}
+                    nom={content.formNom}
+                    mail={content.formMail}
+                    comment={content.formComment}
+                />
             </div>
             <div id="concurs">
-                <Contest />
+                <Contest
+                    title={content.contestTitle}
+                    sub={content.contestSub}
+                    text={content.contestText}
+                    subText={content.contestTexto}
+                />
+            </div>
+            <div id="us">
+                <Left title={content.teamTitle} text={content.teamText} />
+            </div>
+            <div id="acgc">
+                <Right title={content.acgcTitle} text={content.acgcText} />
             </div>
             <div id="footer">
-                <Footer />
+                <Footer alc={content.footerAlc} />
             </div>
         </Fragment>
     );

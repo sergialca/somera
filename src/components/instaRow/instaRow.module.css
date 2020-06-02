@@ -1,5 +1,7 @@
-.wrapper {
+.back {
     background-image: linear-gradient(45deg, #c43a30 0, #874da2 100%);
+}
+.wrapper {
     color: #fff;
     padding: 20px;
     display: flex;
@@ -32,6 +34,12 @@
     text-decoration: none;
     color: #fff;
     background-color: #fdd091;
+}
+
+.feed {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 /*Small devices (landscape phones, 576px and up)*/

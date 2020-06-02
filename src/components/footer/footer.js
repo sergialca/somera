@@ -3,7 +3,7 @@ import email from "../../../static/email.png";
 import insta from "../../../static/instagram.png";
 import style from "./footer.module.css";
 
-const Footer = () => {
+const Footer = props => {
     return (
         <div className={style.footerWrapper}>
             <span className={style.text}>Somera – Cervesa Artesana</span>
@@ -16,9 +16,7 @@ const Footer = () => {
                 </a>
             </div>
             <span className={style.text}>Santa Margarida de Montbui, Barcelona.</span>
-            <span className={style.subText}>
-                Begudes amb contingut alcoholic. Consumir de manera responsable.
-            </span>
+            <span className={style.subText}>{props.alc}</span>
             <span className={style.subText}>
                 Icons made by{" "}
                 <a href="https://www.flaticon.com/authors/chanut" title="Chanut">

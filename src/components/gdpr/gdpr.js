@@ -1,9 +1,13 @@
-import React, { useState, useEffect, Fragment } from "react";
+import React, { useState, useEffect, useContext, Fragment } from "react";
+import { LangContext } from "../../context/lang";
+import axios from "axios";
 import cookie from "react-cookies";
 import style from "./gdpr.module.css";
 
 const Gdpr = ({ children }) => {
     const [someraCookies, setSomeraCookies] = useState({ gdpr: false });
+    const [lang, setLang] = useContext(LangContext);
+    const [content, setContent] = useState("hello");
 
     useEffect(() => {
         const co = cookie.load("someraCookies");
@@ -11,6 +15,25 @@ const Gdpr = ({ children }) => {
         else if (co === "acc") setSomeraCookies({ gdpr: true });
         else cookie.save("someraCookies", "notAcc");
     }, []);
+
+    useEffect(() => {
+        if (lang === "cat") catContent();
+        else if (lang === "esp") espContent();
+    }, [lang]);
+
+    const catContent = async () => {
+        const res = await axios({
+            url: "https://someraserver.herokuapp.com/api/cookiesCat",
+        });
+        setContent(res.data[0]);
+    };
+
+    const espContent = async () => {
+        const res = await axios({
+            url: "https://someraserver.herokuapp.com/api/cookiesEsp",
+        });
+        setContent(res.data[0]);
+    };
 
     const accepted = () => {
         setSomeraCookies({ gdpr: true });
@@ -21,12 +44,8 @@ const Gdpr = ({ children }) => {
         <Fragment>
             {children}
             <div className={someraCookies.gdpr ? style.hide : style.show}>
-                <span>
-                    Aquesta web utilitza cookies per guardar el nom i l'e-mail a l'hora de contactar
-                    amb nosaltres a més de cookies d'analítica. Al navegar per la nostra web,
-                    accepta l'ús de les cookies.
-                </span>
-                <button onClick={accepted}>Acceptar</button>
+                <span>{content.cookiesText}</span>
+                <button onClick={accepted}>{content.cookiesBtn}</button>
             </div>
         </Fragment>
     );

@@ -1,0 +1,69 @@
+.title {
+    font-family: "Playfair Display";
+    font-weight: 700;
+    font-size: 2.5em;
+    color: #3c424f;
+    text-align: center;
+}
+
+.justify {
+    text-align: justify;
+}
+
+.center {
+    text-align: center;
+}
+
+.second {
+    text-align: center;
+}
+
+.font {
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    color: #6b7c93;
+    font-weight: 600;
+}
+
+.bold {
+    font-weight: bold;
+    color: #000000;
+}
+
+/*section intro*/
+.intro {
+    padding: 20px;
+    padding-top: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.textIntro {
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+}
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+    .intro {
+        padding: 50px;
+        padding-top: 0px;
+    }
+    .imgIntro {
+        width: 350px;
+        margin-top: 0px;
+    }
+}
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+}
+
+/*Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+}
