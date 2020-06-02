@@ -21,7 +21,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import style from "./index.module.css";
 
 const Index = () => {
-    const [lang, setLang] = useContext(LangContext);
+    const [lang, setLang] = React.useContext(LangContext);
     console.log("Index -> useContext(LangContext)", useContext(LangContext));
     console.log("Index -> setLang", setLang);
     console.log("Index -> lang", lang);
