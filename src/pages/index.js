@@ -20,7 +20,7 @@ import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import style from "./index.module.css";
 
-const Main = () => {
+const Index = () => {
     const [lang, setLang] = useContext(LangContext);
     const [content, setContent] = useState("hello");
 
@@ -137,4 +137,4 @@ const Main = () => {
     );
 };
 
-export default Main;
+export default Index;
