@@ -15,6 +15,7 @@ import ipa from "../../static/ipa_etiquet.png";
 import weisse from "../../static/weisse_etiquet.png";
 import lab from "../../static/lab_etiquet.png";
 import pack from "../../static/pack.jpg";
+import PulseLoader from "react-spinners/PulseLoader";
 import { LangContext } from "../context/lang";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -22,9 +23,7 @@ import style from "./index.module.css";
 
 const Index = () => {
     const [lang, setLang] = [useContext(LangContext), useContext(LangContext)];
-    console.log("Index -> useContext(LangContext)", useContext(LangContext));
-    console.log("Index -> setLang", setLang);
-    console.log("Index -> lang", lang);
+    const [loadSpinner, setLoadSpinner] = useState(false);
     const [content, setContent] = useState("hello");
 
     useEffect(() => {
@@ -33,20 +32,27 @@ const Index = () => {
     }, [lang]);
 
     const catContent = async () => {
+        setLoadSpinner(true);
         const res = await axios({
             url: "https://someraserver.herokuapp.com/api/cat",
         });
         setContent(res.data[0]);
+        setLoadSpinner(false);
     };
 
     const espContent = async () => {
+        setLoadSpinner(true);
         const res = await axios({
             url: "https://someraserver.herokuapp.com/api/esp",
         });
         setContent(res.data[0]);
+        setLoadSpinner(false);
     };
     return (
         <Fragment>
+            <div className={loadSpinner ? style.spinner : style.no}>
+                <PulseLoader size={12} loading={true} color="#F3A400" />
+            </div>
             <Modal />
             <Nav navVarietats={content.navVarietats} navUs={content.navUs} />
             <div id="cervesa" className={style.intro}>
