@@ -53,7 +53,7 @@ const Form = props => {
             setErrorName("");
             setVals({ ...vals, name: event.target.value });
         } else {
-            setErrorName("Camp obligatori");
+            setErrorName(props.requiredField);
         }
     };
 
@@ -64,9 +64,9 @@ const Form = props => {
                 event.target.value
             )
         ) {
-            setErrorMail("Mail no vàlid");
+            setErrorMail(props.validMail);
         } else if (!event.target.value) {
-            setErrorMail("Camp obligatori");
+            setErrorMail(props.requiredField);
         } else {
             setVals({ ...vals, mail: event.target.value });
             setErrorMail("");
@@ -78,7 +78,7 @@ const Form = props => {
             setErrorComment("");
             setVals({ ...vals, comment: event.target.value });
         } else {
-            setErrorComment("Camp obligatori");
+            setErrorComment(props.requiredField);
         }
     };
     return (
@@ -127,7 +127,13 @@ const Form = props => {
                 <div className={style.spinnerWrapper}>
                     <PacmanLoader loading={loadSpinner} color="#F3A400" />
                 </div>
-                <MailResponse showResponse={showResponse} class={responseClass} />
+                <MailResponse
+                    showResponse={showResponse}
+                    class={responseClass}
+                    ok={props.formOk}
+                    bad={props.formBad}
+                    ty={props.ty}
+                />
             </form>
         </div>
     );

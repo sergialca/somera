@@ -123,6 +123,11 @@ const Index = () => {
                     nom={content.formNom}
                     mail={content.formMail}
                     comment={content.formComment}
+                    requiredField={content.formRequired}
+                    validMail={content.formValidMail}
+                    formOk={content.formOk}
+                    formBad={content.formBad}
+                    ty={content.formTy}
                 />
             </div>
             <div id="concurs">
