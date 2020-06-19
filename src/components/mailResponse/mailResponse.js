@@ -2,7 +2,6 @@ import React from "react";
 import style from "./mailResponse.module.css";
 
 const MailResponse = props => {
-    console.log("props", props);
     const mail = <a href="mailto:info.somera@gmail.com">aquí</a>;
 
     return props.showResponse.show ? (
