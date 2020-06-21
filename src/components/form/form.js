@@ -83,58 +83,60 @@ const Form = props => {
     };
     return (
         <div className={style.formWrapper}>
-            <form id="contact" className={style.form} onSubmit={handleSubmit}>
-                <div className={style.subTitle}>{props.title}</div>
-                <label htmlFor="name">
-                    {props.nom} <span className={style.required}>*</span>
-                </label>
-                <input
-                    className={errorName ? style.errorClass : ""}
-                    type="text"
-                    name="name"
-                    onChange={nameChange}
-                    required
-                />
-                <div className={style.noValid}>{errorName}</div>
-                <label htmlFor="email">
-                    {props.mail} <span className={style.required}>*</span>
-                </label>
-                <input
-                    className={errorMail ? style.errorClass : ""}
-                    type="email"
-                    name="email"
-                    onChange={emailChange}
-                    required
-                />
-                <div className={style.noValid}>{errorMail}</div>
-                <label htmlFor="comment">
-                    {props.comment} <span className={style.required}>*</span>
-                </label>
-                <textarea
-                    className={errorComment ? style.errorClass : style.textArea}
-                    onChange={commentChange}
-                    name="comment"
-                    rows="8"
-                    cols="50"
-                    required
-                />
-                <div className={style.noValid}>{errorComment}</div>
-                <div className={style.btnEnviarWrapper}>
-                    <button className={style.btnEnviar} type="submit">
-                        Enviar
-                    </button>
-                </div>
-                <div className={style.spinnerWrapper}>
-                    <PacmanLoader loading={loadSpinner} color="#F3A400" />
-                </div>
-                <MailResponse
-                    showResponse={showResponse}
-                    class={responseClass}
-                    ok={props.formOk}
-                    bad={props.formBad}
-                    ty={props.ty}
-                />
-            </form>
+            <div className={style.subTitle}>{props.title}</div>
+            <div className={style.formContainer}>
+                <form id="contact" className={style.form} onSubmit={handleSubmit}>
+                    <label htmlFor="name">
+                        {props.nom} <span className={style.required}>*</span>
+                    </label>
+                    <input
+                        className={errorName ? style.errorClass : ""}
+                        type="text"
+                        name="name"
+                        onChange={nameChange}
+                        required
+                    />
+                    <div className={style.noValid}>{errorName}</div>
+                    <label htmlFor="email">
+                        {props.mail} <span className={style.required}>*</span>
+                    </label>
+                    <input
+                        className={errorMail ? style.errorClass : ""}
+                        type="email"
+                        name="email"
+                        onChange={emailChange}
+                        required
+                    />
+                    <div className={style.noValid}>{errorMail}</div>
+                    <label htmlFor="comment">
+                        {props.comment} <span className={style.required}>*</span>
+                    </label>
+                    <textarea
+                        className={errorComment ? style.errorClass : style.textArea}
+                        onChange={commentChange}
+                        name="comment"
+                        rows="8"
+                        cols="50"
+                        required
+                    />
+                    <div className={style.noValid}>{errorComment}</div>
+                    <div className={style.btnEnviarWrapper}>
+                        <button className={style.btnEnviar} type="submit">
+                            Enviar
+                        </button>
+                    </div>
+                    <div className={style.spinnerWrapper}>
+                        <PacmanLoader loading={loadSpinner} color="#F3A400" />
+                    </div>
+                    <MailResponse
+                        showResponse={showResponse}
+                        class={responseClass}
+                        ok={props.formOk}
+                        bad={props.formBad}
+                        ty={props.ty}
+                    />
+                </form>
+            </div>
         </div>
     );
 };

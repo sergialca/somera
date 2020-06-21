@@ -14,7 +14,6 @@ import blonde from "../../static/blonde_etiquet.png";
 import ipa from "../../static/ipa_etiquet.png";
 import weisse from "../../static/weisse_etiquet.png";
 import lab from "../../static/lab_etiquet.png";
-import pack from "../../static/pack.jpg";
 import PulseLoader from "react-spinners/PulseLoader";
 import { LangContext } from "../context/lang";
 import axios from "axios";
@@ -62,9 +61,12 @@ const Index = () => {
                     alt="Somera cervesa artesana intro"
                 />
                 <div className={style.textIntro}>
-                    <span className={`${style.title} ${style.second}`}>{content.beerTitle}</span>
-                    <p className={`${style.justify} ${style.font}`}>{content.beerText}</p>
+                    <span className={`${style.title} ${style.second}`}>{content.teamTitle}</span>
+                    <p className={`${style.justify} ${style.font}`}>{content.teamText}</p>
                 </div>
+            </div>
+            <div id="us">
+                <Left title={content.beerTitle} text={content.beerText} />
             </div>
             <div id="varietats" className={`${style.title} ${style.center}`}></div>
             <div className={style.varietats}>
@@ -101,21 +103,19 @@ const Index = () => {
                     info={content.labConsulta}
                 />
             </div>
+            <div id="concurs">
+                <Contest
+                    title={content.contestTitle}
+                    sub={content.contestSub}
+                    text={content.contestText}
+                    subText={content.contestTexto}
+                />
+            </div>
             <div>
                 <InstaRow text={content.instaText} btn={content.instaBtn} />
             </div>
-            <div id="packs" className={style.pack}>
-                <div className={style.textPack}>
-                    <span className={`${style.title} ${style.second}`}>{content.packTitle}</span>
-                    <p className={`${style.justify} ${style.font}`}>
-                        {content.packText} <span className={style.bold}>{content.packContact}</span>{" "}
-                        {content.packTexto}
-                    </p>
-                    <p className={`${style.imp} ${style.font}`}>
-                        <span>{content.packNew}</span> {content.packNewText}
-                    </p>
-                </div>
-                <img className={style.imgPack} src={pack} alt="pack degustacio" />
+            <div id="acgc">
+                <Right title={content.acgcTitle} text={content.acgcText} />
             </div>
             <div id="form">
                 <Form
@@ -129,20 +129,6 @@ const Index = () => {
                     formBad={content.formBad}
                     ty={content.formTy}
                 />
-            </div>
-            <div id="concurs">
-                <Contest
-                    title={content.contestTitle}
-                    sub={content.contestSub}
-                    text={content.contestText}
-                    subText={content.contestTexto}
-                />
-            </div>
-            <div id="us">
-                <Left title={content.teamTitle} text={content.teamText} />
-            </div>
-            <div id="acgc">
-                <Right title={content.acgcTitle} text={content.acgcText} />
             </div>
             <div id="footer">
                 <Footer alc={content.footerAlc} />

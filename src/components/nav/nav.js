@@ -24,24 +24,20 @@ const Nav = props => {
                 <img className={style.logo} src={lletra} alt="logo" />
             </Link>
             <Navbar.Collapse id="responsive-navbar-nav">
-                <Link onClick={sel} className={`${style.space} ${style.navLink}`} to="/#varietats">
-                    {props.navVarietats}
-                </Link>
-                <br />
-                <Link onClick={sel} className={`${style.space} ${style.navLink}`} to="/#packs">
-                    Packs
-                </Link>
-                <br />
-                <Link onClick={sel} className={`${style.space} ${style.navLink}`} to="/#form">
-                    Contacta
-                </Link>
-                <br />
                 <Link onClick={sel} className={`${style.space} ${style.navLink}`} to="/#us">
                     {props.navUs}
                 </Link>
                 <br />
+                <Link onClick={sel} className={`${style.space} ${style.navLink}`} to="/#varietats">
+                    {props.navVarietats}
+                </Link>
+                <br />
                 <Link onClick={sel} className={`${style.space} ${style.navLink}`} to="/#acgc">
                     ACGC
+                </Link>
+                <br />
+                <Link onClick={sel} className={`${style.space} ${style.navLink}`} to="/#form">
+                    Contacta
                 </Link>
                 <br />
                 <a

@@ -32,7 +32,6 @@
 /*section intro*/
 .intro {
     padding: 20px;
-    padding-top: 0px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -44,15 +43,10 @@
     width: 800px;
 }
 
-/*Small devices (landscape phones, 576px and up)*/
-@media (min-width: 576px) {
-}
-
 /*Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) {
     .intro {
         padding: 50px;
-        padding-top: 0px;
     }
     .imgIntro {
         width: 350px;
