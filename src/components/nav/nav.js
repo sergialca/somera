@@ -20,16 +20,16 @@ const Nav = props => {
 
     return (
         <Navbar className={style.navBar} expanded={show} fixed="top" expand="lg">
-            <Link onClick={sel} to="/#cervesa">
+            <Link onClick={sel} to="/#team">
                 <img className={style.logo} src={lletra} alt="logo" />
             </Link>
             <Navbar.Collapse id="responsive-navbar-nav">
-                <Link onClick={sel} className={`${style.space} ${style.navLink}`} to="/#us">
+                <Link onClick={sel} className={`${style.space} ${style.navLink}`} to="/#team">
                     {props.navUs}
                 </Link>
                 <br />
-                <Link onClick={sel} className={`${style.space} ${style.navLink}`} to="/#varietats">
-                    {props.navVarietats}
+                <Link onClick={sel} className={`${style.space} ${style.navLink}`} to="/#product">
+                    {props.navBeer}
                 </Link>
                 <br />
                 <Link onClick={sel} className={`${style.space} ${style.navLink}`} to="/#acgc">

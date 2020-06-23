@@ -53,8 +53,8 @@ const Index = () => {
                 <PulseLoader size={12} loading={true} color="#F3A400" />
             </div>
             <Modal />
-            <Nav navVarietats={content.navVarietats} navUs={content.navUs} />
-            <div id="cervesa" className={style.intro}>
+            <Nav navBeer={content.navBeer} navUs={content.navUs} />
+            <div id="team" className={style.intro}>
                 <img
                     className={style.imgIntro}
                     src={logoIntro}
@@ -65,10 +65,10 @@ const Index = () => {
                     <p className={`${style.justify} ${style.font}`}>{content.teamText}</p>
                 </div>
             </div>
-            <div id="us">
+            <div id="product">
                 <Left title={content.beerTitle} text={content.beerText} />
             </div>
-            <div id="varietats" className={`${style.title} ${style.center}`}></div>
+            <div className={`${style.title} ${style.center}`}></div>
             <div className={style.varietats}>
                 <Varietat
                     imgSrc={ipa}
