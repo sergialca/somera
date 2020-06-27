@@ -73,20 +73,20 @@ const Index = () => {
                 <Varietat
                     imgSrc={ipa}
                     subTitle="IPA"
-                    info="Alc: 6,2%, IBU: 50"
+                    info={content.ipaFeatures}
                     text={content.ipaText}
                 />
                 <Varietat
                     imgSrc={blonde}
                     subTitle="Blonde"
                     text={content.blondeText}
-                    info="Alc: 5,6% IBU: 15"
+                    info={content.blondeFeatures}
                 />
                 <Varietat
                     imgSrc={weisse}
                     subTitle="Weissebier"
                     text={content.weissebierText}
-                    info="Alc: 5,5% IBU: 22"
+                    info={content.weissebierFeatures}
                 />
                 <Lab
                     imgSrc={lab}
