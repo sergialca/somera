@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useContext, Fragment } from "react";
 import { LangContext } from "../../context/lang";
-import axios from "axios";
+import gdprCa from "../../json/gdprCa.json";
+import gdprEs from "../../json/gdprEs.json";
 import cookie from "react-cookies";
 import style from "./gdpr.module.css";
 
 const Gdpr = ({ children }) => {
     const [someraCookies, setSomeraCookies] = useState({ gdpr: false });
-    const [lang, setLang] = [useContext(LangContext), useContext(LangContext)];
+    const { lang } = useContext(LangContext);
     const [content, setContent] = useState("hello");
 
     useEffect(() => {
@@ -17,23 +18,11 @@ const Gdpr = ({ children }) => {
     }, []);
 
     useEffect(() => {
-        if (lang[0] === "cat") catContent();
-        else if (lang[0] === "esp") espContent();
+        setTimeout(() => {
+            if (lang === "cat") setContent(() => gdprCa);
+            else if (lang === "esp") setContent(() => gdprEs);
+        }, 1000);
     }, [lang]);
-
-    const catContent = async () => {
-        const res = await axios({
-            url: "https://someraserver.herokuapp.com/api/cookiesCat",
-        });
-        setContent(res.data[0]);
-    };
-
-    const espContent = async () => {
-        const res = await axios({
-            url: "https://someraserver.herokuapp.com/api/cookiesEsp",
-        });
-        setContent(res.data[0]);
-    };
 
     const accepted = () => {
         setSomeraCookies({ gdpr: true });

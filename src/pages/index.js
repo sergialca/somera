@@ -16,37 +16,25 @@ import weisse from "../../static/weisse_etiquet.png";
 import lab from "../../static/lab_etiquet.png";
 import PulseLoader from "react-spinners/PulseLoader";
 import { LangContext } from "../context/lang";
-import axios from "axios";
+import indexCa from "../json/indexCa.json";
+import indexEs from "../json/indexEs.json";
 import "bootstrap/dist/css/bootstrap.min.css";
 import style from "./index.module.css";
 
 const Index = () => {
-    const [lang, setLang] = [useContext(LangContext), useContext(LangContext)];
+    const { lang } = useContext(LangContext);
     const [loadSpinner, setLoadSpinner] = useState(false);
     const [content, setContent] = useState("hello");
 
     useEffect(() => {
-        if (lang[0] === "cat") catContent();
-        else if (lang[0] === "esp") espContent();
+        setLoadSpinner(true);
+        setTimeout(() => {
+            if (lang === "cat") setContent(() => indexCa);
+            else if (lang === "esp") setContent(() => indexEs);
+            setLoadSpinner(false);
+        }, 1000);
     }, [lang]);
 
-    const catContent = async () => {
-        setLoadSpinner(true);
-        const res = await axios({
-            url: "https://someraserver.herokuapp.com/api/cat",
-        });
-        setContent(res.data[0]);
-        setLoadSpinner(false);
-    };
-
-    const espContent = async () => {
-        setLoadSpinner(true);
-        const res = await axios({
-            url: "https://someraserver.herokuapp.com/api/esp",
-        });
-        setContent(res.data[0]);
-        setLoadSpinner(false);
-    };
     return (
         <Fragment>
             <div className={loadSpinner ? style.spinner : style.no}>

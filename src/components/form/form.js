@@ -21,6 +21,7 @@ const Form = props => {
         axios({
             method: "post",
             url: "https://someraserver.herokuapp.com/api/mail",
+            //url: "http://localhost:3000/api/mail",
             data: {
                 name: vals.name,
                 mail: vals.mail,
