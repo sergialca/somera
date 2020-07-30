@@ -21,7 +21,7 @@ const Gdpr = ({ children }) => {
         setTimeout(() => {
             if (lang === "cat") setContent(() => gdprCa);
             else if (lang === "esp") setContent(() => gdprEs);
-        }, 1000);
+        }, 500);
     }, [lang]);
 
     const accepted = () => {

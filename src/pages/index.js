@@ -33,7 +33,7 @@ const Index = () => {
             if (lang === "cat") setContent(() => indexCa);
             else if (lang === "esp") setContent(() => indexEs);
             setLoadSpinner(false);
-        }, 1000);
+        }, 500);
     }, [lang]);
 
     return (
@@ -65,18 +65,21 @@ const Index = () => {
                     subTitle="IPA"
                     info={content.ipaFeatures}
                     text={content.ipaText}
+                    alt="Etiqueta IPA"
                 />
                 <Varietat
                     imgSrc={blonde}
                     subTitle="Blonde"
                     text={content.blondeText}
                     info={content.blondeFeatures}
+                    alt="Etiqueta blonde"
                 />
                 <Varietat
                     imgSrc={weisse}
                     subTitle="Weissebier"
                     text={content.weissebierText}
                     info={content.weissebierFeatures}
+                    alt="Etiqueta weissebire"
                 />
                 <Lab
                     imgSrc={lab}
@@ -91,6 +94,7 @@ const Index = () => {
                     lab4={content.lab4}
                     lab4Text={content.lab4Text}
                     info={content.labConsulta}
+                    alt="Etiqueta Somera lab"
                 />
             </div>
             <div id="concurs">
