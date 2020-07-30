@@ -18,6 +18,7 @@ import PulseLoader from "react-spinners/PulseLoader";
 import { LangContext } from "../context/lang";
 import indexCa from "../json/indexCa.json";
 import indexEs from "../json/indexEs.json";
+import Seo from "../components/seo/seo";
 import "bootstrap/dist/css/bootstrap.min.css";
 import style from "./index.module.css";
 
@@ -37,6 +38,7 @@ const Index = () => {
 
     return (
         <Fragment>
+            <Seo />
             <div className={loadSpinner ? style.spinner : style.no}>
                 <PulseLoader size={12} loading={true} color="#F3A400" />
             </div>

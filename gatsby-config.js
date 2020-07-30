@@ -13,6 +13,13 @@ module.exports = {
                 offset: -50,
             },
         },
+        `gatsby-plugin-react-helmet`,
     ],
+    siteMetadata: {
+        title: "Cervesa Somera",
+        description: "Cervesa artesana",
+        url: "https://www.cervesasomera.com", // No trailing slash allowed!
+        image: "favicon.ico", // Path to your image you placed in the 'static' folder
+    },
     /* Your site config here */
 };
