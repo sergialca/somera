@@ -18,8 +18,8 @@ module.exports = {
     siteMetadata: {
         title: "Somera",
         description: "Cervesa artesana",
-        url: window.host,
-        image: "/static/somera_intro.png",
+        url: "https://www.cervesasomera.com",
+        image: "./static/somera_intro.png",
         author: "sergialca",
     },
 };
