@@ -5,7 +5,7 @@
  */
 
 module.exports = {
-    pathPrefix: "/somera",
+    pathPrefix: "",
     plugins: [
         {
             resolve: "gatsby-plugin-anchor-links",
