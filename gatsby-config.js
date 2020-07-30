@@ -16,10 +16,10 @@ module.exports = {
         `gatsby-plugin-react-helmet`,
     ],
     siteMetadata: {
-        title: "Cervesa Somera",
+        title: "Somera",
         description: "Cervesa artesana",
-        url: "https://www.cervesasomera.com", // No trailing slash allowed!
-        image: "favicon.ico", // Path to your image you placed in the 'static' folder
+        url: window.host,
+        image: "/static/somera_intro.png",
+        author: "sergialca",
     },
-    /* Your site config here */
 };
