@@ -1,9 +1,10 @@
 {
-  "name": "gatsby-starter-hello-world",
+  "name": "somera",
   "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
+  "description": "Craft beer",
   "version": "0.1.0",
   "license": "MIT",
+  "homepage": "https://sergialca.github.io/somera",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
